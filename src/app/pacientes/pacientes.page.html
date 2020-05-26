@@ -5,5 +5,13 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-list>
+    <ion-item *ngFor='let paciente of loadedPacientes'>
+      <ion-label>
+        <h2>{{paciente.nome}}</h2>
+        <h3>{{paciente.telefone}}</h3>
+        <p>{{paciente.email}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

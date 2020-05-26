@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PacientesService } from '../pacientes.service';
+
+import { Paciente } from 'src/app/paciente.model'
 
 @Component({
   selector: 'app-pacientes',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PacientesPage implements OnInit {
 
-  constructor() { }
+  loadedPacientes: Paciente[]
+
+  constructor(
+    private pacientesService:PacientesService
+  ) {}
 
   ngOnInit() {
+    this.loadedPacientes = this.pacientesService.getPacientes();
   }
 
 }
