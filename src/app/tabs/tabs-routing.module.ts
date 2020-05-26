@@ -20,6 +20,34 @@ const routes: Routes = [
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {
+        path: 'pacientes',
+        loadChildren: () => import('./pacientes/pacientes.module').then( m => m.PacientesPageModule)
+      },
+      {
+        path: 'consultas-hoje',
+        loadChildren: () => import('./consultas-hoje/consultas-hoje.module').then( m => m.ConsultasHojePageModule)
+      },
+      {
+        path: 'consultas-proximas',
+        loadChildren: () => import('./consultas-proximas/consultas-proximas.module').then( m => m.ConsultasProximasPageModule)
+      },
+      {
+        path: 'consultas-todas',
+        loadChildren: () => import('./consultas-todas/consultas-todas.module').then( m => m.ConsultasTodasPageModule)
+      },
+      {
+        path: 'relatorio',
+        loadChildren: () => import('./relatorio/relatorio.module').then( m => m.RelatorioPageModule)
+      },
+      {
+        path: 'totais',
+        loadChildren: () => import('./totais/totais.module').then( m => m.TotaisPageModule)
+      },
+      {
+        path: 'pendente',
+        loadChildren: () => import('./pendente/pendente.module').then( m => m.PendentePageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
