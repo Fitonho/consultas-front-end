@@ -13,15 +13,15 @@ const routes: Routes = [
       },
       {
         path: 'consultas-hoje',
-        loadChildren: () => import('../consultas-hoje/consultas-hoje.module').then( m => m.ConsultasHojePageModule)
+        loadChildren: () => import('../consultas/hoje/consultas-hoje.module').then( m => m.ConsultasHojePageModule)
       },
       {
         path: 'consultas-proximas',
-        loadChildren: () => import('../consultas-proximas/consultas-proximas.module').then( m => m.ConsultasProximasPageModule)
+        loadChildren: () => import('../consultas/proximas/consultas-proximas.module').then( m => m.ConsultasProximasPageModule)
       },
       {
         path: 'consultas-todas',
-        loadChildren: () => import('../consultas-todas/consultas-todas.module').then( m => m.ConsultasTodasPageModule)
+        loadChildren: () => import('../consultas/todas/consultas-todas.module').then( m => m.ConsultasTodasPageModule)
       },
       {
         path: 'relatorio',
@@ -33,7 +33,7 @@ const routes: Routes = [
       },
       {
         path: 'pendente',
-        loadChildren: () => import('../pendente/pendente.module').then( m => m.PendentePageModule)
+        loadChildren: () => import('../consultas/pendente/pendente.module').then( m => m.PendentePageModule)
       },
       {
         path: '',

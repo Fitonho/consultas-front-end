@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot='start'>
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Criar nova Consulta</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCreatePacient()" [disabled]="!form.valid">
+        <ion-icon name="checkmark" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="10" offset-sm="1">
+          <ion-item>
+            <ion-label position="floating">Nome do Paciente</ion-label>
+            <ion-input formControlName="nome"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="10" offset-sm="1">
+          <ion-item>
+            <ion-label position="floating">Telefone</ion-label>
+            <ion-input type="number" formControlName="telefone"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="10" offset-sm="1">
+          <ion-item>
+            <ion-label position="floating">E-mail</ion-label>
+            <ion-input type="email" email formControlName="email"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

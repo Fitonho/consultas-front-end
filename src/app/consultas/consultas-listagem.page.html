@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color='primary'>
+    <ion-title>consultas-todas</ion-title>
+    <ion-buttons slot='primary'>
+      <ion-button (click)="consultasService.openCreateAppointmentForm()">
+        <ion-icon name='add-outline' slot='icon-only'></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeMd='6' offsetMd='3'>
+        <ion-list>
+          <ion-item *ngFor='let consulta of loadedConsultas' button>
+            <ion-label>
+              <h2>{{consulta.dataConsulta | date:'d/M/y HH:mm' }}</h2>
+              <h3>{{consulta.nome}}</h3>
+              <p>{{consulta.valorPago}}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
