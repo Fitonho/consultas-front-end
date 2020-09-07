@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ConsultasService } from 'src/app/consultas.service';
-import { Consulta } from 'src/app/pacientes/consultas.model';
+import { ConsultasService } from '../../consultas.service';
+import { Consulta } from '../../pacientes/consultas.model';
 
 @Component({
   selector: 'app-consultas-todas',

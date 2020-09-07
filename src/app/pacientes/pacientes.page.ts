@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PacientesService } from '../pacientes.service';
 
-import { Paciente } from 'src/app/paciente.model'
+import { Paciente } from '../paciente.model'
 import { ModalController } from '@ionic/angular';
 import { CriarPacienteComponent } from './criar-paciente/criar-paciente.component';
 

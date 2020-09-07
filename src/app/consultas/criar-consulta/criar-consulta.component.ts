@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { PacientesService } from 'src/app/pacientes.service';
-import { Paciente } from 'src/app/paciente.model';
+import { PacientesService } from '../../pacientes.service';
+import { Paciente } from '../../paciente.model';
 import { ModalController } from '@ionic/angular';
 
 @Component({
