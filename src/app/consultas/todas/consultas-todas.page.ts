@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ConsultasService } from '../../consultas.service';
 import { Consulta } from '../../pacientes/consultas.model';
 
@@ -7,16 +8,26 @@ import { Consulta } from '../../pacientes/consultas.model';
   templateUrl: '../consultas-listagem.page.html',
   styleUrls: ['./consultas-todas.page.scss'],
 })
-export class ConsultasTodasPage implements OnInit {
+export class ConsultasTodasPage implements OnInit,OnDestroy {
 
-  loadedConsultas:Consulta[]
+  title = "Todas as consultas";
+  loadedConsultas:Consulta[];
+  consultasSub: Subscription;
+
 
   constructor(
     public consultasService:ConsultasService
   ) { }
 
   ngOnInit() {
-    this.loadedConsultas = this.consultasService.consultas
+    this.consultasSub = this.consultasService.consultas.subscribe((consultas =>{
+      this.loadedConsultas = consultas
+    }))
+  }
+
+  ngOnDestroy(){
+    if(this.consultasSub)
+      this.consultasSub.unsubscribe();
   }
 
 }
