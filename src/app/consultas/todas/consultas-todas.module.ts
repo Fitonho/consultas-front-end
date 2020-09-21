@@ -7,15 +7,13 @@ import { IonicModule } from '@ionic/angular';
 import { ConsultasTodasPageRoutingModule } from './consultas-todas-routing.module';
 
 import { ConsultasTodasPage } from './consultas-todas.page';
-import { CriarConsultaComponent } from '../criar-consulta/criar-consulta.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    ReactiveFormsModule,
     IonicModule,
     ConsultasTodasPageRoutingModule
   ],
-  declarations: [ConsultasTodasPage,CriarConsultaComponent]
+  declarations: [ConsultasTodasPage]
 })
 export class ConsultasTodasPageModule {}
