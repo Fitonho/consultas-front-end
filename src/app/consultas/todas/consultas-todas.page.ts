@@ -25,6 +25,14 @@ export class ConsultasTodasPage implements OnInit,OnDestroy {
     }))
   }
 
+  ionViewWillEnter(){
+    this.consultasService.isLoading = true;
+    this.consultasService.fetchConsultas().subscribe(resData => {
+      console.log(resData);
+      this.consultasService.isLoading = false;
+    })
+  }
+
   ngOnDestroy(){
     if(this.consultasSub)
       this.consultasSub.unsubscribe();
