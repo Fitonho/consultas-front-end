@@ -13,12 +13,22 @@
   <ion-grid>
     <ion-row>
       <ion-col sizeMd="6" offsetMd="3">
-        <ion-list>
-          <ion-item *ngFor="let consulta of loadedConsultas" button>
+        <div *ngIf="consultasService.isLoading" class="ion-text-center">
+          <ion-spinner color="primary"></ion-spinner>
+        </div>
+        <ion-list *ngIf="!consultasService.isLoading">
+          <ion-item
+            *ngFor="let consulta of loadedConsultas"
+            (click)="consultasService.openEditAppointmentForm(consulta)"
+            button
+          >
             <ion-label>
               <h2>{{consulta.dataConsulta | date:'d/M/y HH:mm' }}</h2>
               <h3>{{consulta.nome}}</h3>
-              <p>{{consulta.valorPago}}</p>
+              <p>
+                Total:{{consulta.preco | currency:'BRL' }} Pago:{{consulta.pago
+                | currency:'BRL'}}
+              </p>
             </ion-label>
           </ion-item>
         </ion-list>
